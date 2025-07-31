@@ -508,6 +508,257 @@ var longestWithoutRepleatingCharacter = (str) => {
     console.log(`Max length of substring without repeating characters: ${maxLength}`);
 }
 
+var commonElementBetweenTwoArray = (arr1,arr2) => {
+
+    console.log(`arr1 : ${arr1}`);
+    console.log(`arr2 : ${arr2}`);
+    
+
+    const set1 = new Set(arr1);
+    const commonSet = new Set();
+
+    for (const c of arr2) {
+        if (set1.has(c)) {
+            commonSet.add(c);
+        }
+    }
+    console.log(`common Element :`);
+    
+    console.log(commonSet);
+    
+}
+
+var firstAndLastElementOfAnArray = (arr) =>{
+    console.log(arr);
+    
+    if (arr.length >0) {
+        console.log(`First Element :${arr[0]}` );
+        console.log(`Last Element:${arr[arr.length-1]}`);
+    } else {
+        console.log(`array is empety`);
+        
+    } 
+}
+
+var bubbleSort = (arr) => {
+
+    console.log(arr);
+    
+
+    for (let i = 0; i < arr.length-1; i++) {
+        for (let j = 0; j < arr.length-i-1; j++) {
+            if (arr[j]>arr[j+1]) {
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    console.log(`sorted array:`);
+        console.log(arr);
+}
+
+
+var selectionSort = (arr) => {
+
+    console.log(arr);
+    
+
+    for (let i = 0; i < arr.length-1; i++) {
+
+        let minIndex = i;
+        for (let j = i+1; j < arr.length; j++) {
+            if (arr[minIndex]> arr[j]) {
+                minIndex =j;
+            }
+            let temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+    console.log(`sorted array:`);
+        console.log(arr);
+}
+
+
+var insertionSort = (arr) => {
+    console.log(arr);
+    
+
+    for (let i = 1; i < arr.length-1; i++) {
+
+        let current = arr[i];
+        var j = i-1;
+        while (j>= 0 && current <arr[j]) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = current;
+    }
+    console.log(`sorted array:`);
+        console.log(arr);
+}
+
+var removeDuplicates = (arr) => {
+    console.log(`Before removing duplicates :`);
+    
+    console.log(arr);
+    
+
+    const unique = new Set(arr);
+
+    const narr = new Array(unique.size);
+
+    let count = 0;
+    for (const c of unique) {
+        narr[count++] = c;
+    }
+    console.log(`After Removing Duplicates`);
+    
+    console.log(narr);
+    
+}
+
+var missingNumber = (arr) => {
+
+    console.log(arr);
+    
+    let n = arr.length +1 ;
+    let totalSum = n*(n+1)/2;
+    let sum = 0;
+
+    for (const c of arr) {
+        sum +=c;
+    }
+
+    console.log(`missing number : ${totalSum - sum}`);
+    
+}
+
+var smallestAndLargestNumber = (arr) => {
+
+    console.log(arr);
+    
+    let smallest = arr[0];
+    let largest = arr[0];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (smallest > arr[i]) {
+            smallest =arr[i];
+        }
+
+        if (largest < arr[i]) {
+            largest = arr[i];
+        }
+    }
+
+    console.log(`smallest : ${smallest}`);
+    console.log(`largest : ${largest}`);
+    
+}
+
+var searchElementInAnArray = (arr,target) => {
+
+    console.log(arr);
+    let index = 0;
+    for (const c of arr) {
+        if (c == target) {
+            console.log(index);
+            
+        }
+        index++;
+    }
+    console.log(`index : ${index}`);
+    
+}
+
+
+var searchFirstAndLastIndexOfAnElement = (arr,target) => {
+
+    var first = 0;
+    var last =  0;
+
+    console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    if (first != 0) {
+        if (arr[i] == target) {
+            last = i;
+        }
+    } else {
+        if (arr[i] == target) {
+            first = i;
+        }
+        } 
+     }
+    console.log(`first Index : ${first}`);
+    console.log(`Last index : ${last}`);
+     
+    
+}
+
+var sumOnlyIntegers = (arr) => {
+
+    console.log(arr);
+    
+    let sum = 0;
+    
+   for (const c of arr) {
+        let n = parseInt(c);
+
+        if (!isNaN(n)) {
+            sum += n;
+        }
+   }
+
+    console.log(`total Sum : ${sum}`);
+}
+
+var countOddAndEven = (arr) => {
+
+    console.log(arr);
+   
+    let odd = 0;
+    let even = 0;
+
+    for (const c of arr) {
+        if (c%2==0) {
+            even++;
+        } else {
+            odd++;
+        }
+    }
+
+    
+    console.log(`even count : ${even}`);
+    console.log(`Odd count : ${odd}`);
+}
+
+
+var findNonRepeatedElements = (arr) => {
+
+    console.log(arr);
+   console.log("non Repeated Elements");
+   
+    const map = new Map();
+
+    for (const c of arr) {
+        if (!map.has(c)) {
+            map.set(c,map.get(c)+1);
+        } else {
+            map.set(c,1);
+        }
+    }
+
+    for (let [c,count] of map.entries()) {
+        if (map.get(c)==1) {
+            console.log(c + " ");
+            
+        }
+    }
+
+    
+}
+
 
 
 
@@ -641,5 +892,41 @@ format('31');
 
 longestWithoutRepleatingCharacter("abcabcbb");
 longestWithoutRepleatingCharacter("pwwkew");  
+
+
+const arr1 = new Array(1,2,3,4,5);
+const arr2 = [1,2,4,6,7]
+commonElementBetweenTwoArray(arr1,arr2);
+
+firstAndLastElementOfAnArray(arr1);
+firstAndLastElementOfAnArray(arr2);
+
+bubbleSort([1,4,6,7,9,5,3]);
+bubbleSort([1,4,6,5,3]);
+
+selectionSort([3,627,27,2,7,27,27,27]);
+selectionSort([62,7,27,2,72,7,2,72,7]);
+
+insertionSort([1,62,6,7,8,38,3,6,2,5]);
+insertionSort([36,73,73,3,6,3,5,7,4,7,4,7,4,7]);
+
+removeDuplicates([1,46,262,66,44,44,22,55,22]);
+
+missingNumber([1,2,3,4,6,7,8,9]);
+
+smallestAndLargestNumber([1,24,4,637,2,28,2,272,67272]);
+
+searchElementInAnArray([1,3,5,52,6,62], 5);
+
+searchFirstAndLastIndexOfAnElement([1,3,5,1627,27,37,37272,82,6,3,535,5,2],5)
+
+sumOnlyIntegers(["10", "20", "abc", "30", "4.5", "NaN", "50"])
+
+countOddAndEven([1,235,737,38,,5,7,3,73,83,73,27,73,737,82,726,2626252,52,525,25,2,6,26,2,62672,,7,27,27,2,7,27,2,7,28]);
+
+findNonRepeatedElements([1,3,522,52,2,52,52,525,252,5242,422,3,44,555,555,3322,4])
+
+
+
 
 
