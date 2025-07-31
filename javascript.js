@@ -757,6 +757,24 @@ var findNonRepeatedElements = (arr) => {
     }
 }
 
+
+var reverseAnArray = (arr) => {
+
+    console.log(arr);
+    let first = 0;
+    let last = arr.length-1;
+
+    while (first < last ) {
+        let temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+
+        first++;
+        last--;
+    }
+
+}
+
 var solidRectangel = (n,m) => {
 
     console.log(`b = ${n}`);
@@ -1252,6 +1270,8 @@ sumOnlyIntegers(["10", "20", "abc", "30", "4.5", "NaN", "50"])
 countOddAndEven([1,235,737,38,,5,7,3,73,83,73,27,73,737,82,726,2626252,52,525,25,2,6,26,2,62672,,7,27,27,2,7,27,2,7,28]);
 
 findNonRepeatedElements([1,3,522,52,2,52,52,525,252,5242,422,3,44,555,555,3322,4]);
+
+reverseAnArray([5,6,3,7,83,2,72,52,1,67,8]);
 
 solidRectangel(5,4);
 
