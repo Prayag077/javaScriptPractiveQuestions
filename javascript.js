@@ -755,9 +755,336 @@ var findNonRepeatedElements = (arr) => {
             
         }
     }
+}
 
+var solidRectangel = (n,m) => {
+
+    console.log(`b = ${n}`);
+    console.log(`l = ${m}`);
+
+
+    for (let i = 0; i < n; i++) {
+
+        let row = ``;
+        for (let j = 0; j < m; j++) {
+            row += 'x ';            
+        }
+        console.log(row);
+    }
     
 }
+
+var hollowRectangel = (n,m) => {
+
+    console.log(`b = ${n}`);
+    console.log(`l = ${m}`);
+    
+
+    for (let i = 0; i < n; i++) {
+
+        let row = ``;
+        for (let j = 0; j < m; j++) {
+            if (j==0 || i== 0|| j==m-1 || i==n-1) {
+                row += 'x ';
+            } else {
+                row += '  ';
+            }
+        }
+        console.log(row);
+    }  
+}
+
+
+var halfPyramid = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    
+
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            row += `x `;
+        }
+        console.log(row);
+    }  
+}
+
+
+var invertedHalfPyramid = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    
+
+    for (let i = n; i >=1; i--) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            row += `x `;
+        }
+        console.log(row);
+    }  
+}
+
+var invertedHalfPyramid2ndWay = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    
+
+    for (let i = 1; i<=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=n-i+1; j++) {
+            row += `x `;
+        }
+        console.log(row);
+    }  
+}
+
+var invertedRotatedHalfPyramid = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    for (let i = 1; i<=n; i++) {
+
+        let row = ``;
+        
+
+        for (let j = 1; j <=n-i+1; j++) {
+            row += `  `;
+        }
+
+        for (let j = 1; j <= i ; j++) {
+            row += `x `;
+            
+        }
+        console.log(row);
+    }  
+}
+
+var halfPyramidWithNumbers = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    
+
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            row += `${j} `;
+        }
+        console.log(row);
+    }  
+}
+
+var invertedHalfPyramidWithNumbers = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    
+
+    for (let i = n; i >=1; i--) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            row += `${j} `;
+        }
+        console.log(row);
+    }  
+}
+
+var floydsTraingle = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    var count = 1;
+
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            row += `${count++} `;
+        }
+        console.log(row);
+    }  
+}
+
+var zeroOneTraingle = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    var count = 1;
+
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            if ((i+j)%2==0) {
+                row +='1 ';
+            } else {
+                row +=`0 `;
+            }
+        }
+        console.log(row);
+    }  
+}
+
+var butterFly = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    
+
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            row += `x `;
+        }
+
+        for (let j = 1; j <=2*(n-i); j++) {
+            row += `  `;
+        }
+        
+
+        for (let j = 1; j <= i; j++) {
+            row += `x `;
+        }
+
+        
+        
+        console.log(row);
+    }  
+
+    for (let i = n; i >=1; i--) {
+
+        let row = ``;
+        for (let j = 1; j <=i; j++) {
+            row += `x `;
+        }
+
+        for (let j = 1; j <=2*(n-i); j++) {
+            row += `  `;
+        }
+        
+
+        for (let j = 1; j <= i; j++) {
+            row += `x `;
+        }
+
+        console.log(row);
+    }  
+}
+
+var rombus = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=n-i+1; j++) {
+           row += `  `;
+        }
+
+        for (let j = 1; j <=n; j++) {
+           row += `x `;
+        }
+        console.log(row);
+    }  
+}
+
+
+var numberPyramid = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=n-i+1; j++) {
+           row += `  `;
+        }
+
+        for (let j = 1; j <=i; j++) {
+           row += ` ${i}  `;
+        }
+
+
+        console.log(row);
+    }  
+}
+
+
+var palindromicPyramid = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=n-i+1; j++) {
+           row += `  `;
+        }
+
+        for (let j = i; j >=1; j--) {
+           row += `${j} `;
+        }
+
+        for (let j = 2; j <=i; j++) {
+           row += `${j} `;
+        }
+        console.log(row);
+    }  
+}
+
+var diamondPattern = (n) => {
+
+    console.log(`a = ${n}`);
+    
+    for (let i = 1; i <=n; i++) {
+
+        let row = ``;
+        for (let j = 1; j <=n-i+1; j++) {
+           row += `  `;
+        }
+
+        for (let j = 1; j <=2*i-1; j++) {
+           row += `x `;
+        }
+        console.log(row);
+    }  
+
+    for (let i = n; i >=1; i--) {
+
+        let row = ``;
+        for (let j = 1; j <=n-i+1; j++) {
+           row += `  `;
+        }
+
+        for (let j = 1; j <=2*i-1; j++) {
+           row += `x `;
+        }
+        console.log(row);
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -924,9 +1251,37 @@ sumOnlyIntegers(["10", "20", "abc", "30", "4.5", "NaN", "50"])
 
 countOddAndEven([1,235,737,38,,5,7,3,73,83,73,27,73,737,82,726,2626252,52,525,25,2,6,26,2,62672,,7,27,27,2,7,27,2,7,28]);
 
-findNonRepeatedElements([1,3,522,52,2,52,52,525,252,5242,422,3,44,555,555,3322,4])
+findNonRepeatedElements([1,3,522,52,2,52,52,525,252,5242,422,3,44,555,555,3322,4]);
 
+solidRectangel(5,4);
 
+hollowRectangel(5,4);
+
+halfPyramid(5);
+
+invertedHalfPyramid(5);
+
+invertedHalfPyramid2ndWay(7);
+
+invertedRotatedHalfPyramid(5);
+
+halfPyramidWithNumbers(5);
+
+invertedHalfPyramidWithNumbers(5);
+
+floydsTraingle(5);
+
+zeroOneTraingle(5);
+
+butterFly(5);
+
+rombus(5);
+
+numberPyramid(5);
+
+palindromicPyramid(5);
+
+diamondPattern(5);
 
 
 
